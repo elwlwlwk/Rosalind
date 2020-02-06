@@ -18,3 +18,6 @@ DNA_CODON_TABLE = {'TTT': 'F', 'CTT': 'L', 'ATT': 'I', 'GTT': 'V', 'TTC': 'F', '
 
 def convert_codon(codon):
     return RNA_CODON_TABLE[codon]
+
+def get_complement(seq):
+    return ''.join(map(lambda base: 'G' if base == 'C' else 'C' if base == 'G' else 'A' if base == 'T' else 'T', reversed(seq)))
